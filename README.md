@@ -97,7 +97,7 @@ The package is publicly available on the MATLAB *File Exchange*.
 The full source code, documentation, and usage examples are hosted on GitHub:
 
 - MATLAB File Exchange: [carouselgreedy on MATLAB File Exchange](https://www.mathworks.com/matlabcentral/fileexchange/) [Work In Progress]  
-- GitHub: [https://github.com/RaffaeleDragone/carouselgreedy](https://github.com/RaffaeleDragone/matlab-carouselgreedy)
+- GitHub: [https://github.com/RaffaeleDragone/matlab-carouselgreedy](https://github.com/RaffaeleDragone/matlab-carouselgreedy)
 
 ---
 
