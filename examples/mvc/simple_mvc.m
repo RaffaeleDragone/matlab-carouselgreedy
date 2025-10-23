@@ -48,6 +48,7 @@ rng(seed);
         score = deg(cand);          % greedy score = residual degree
     end
 
+    
 % --- Run CarouselGreedy ---
 cg = carouselgreedy.CarouselGreedy(@myFeas, @myGreedy, 1:n, ...
         'Data', struct('A', A), ...
