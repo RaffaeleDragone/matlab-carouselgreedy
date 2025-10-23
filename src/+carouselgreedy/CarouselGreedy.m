@@ -13,8 +13,7 @@ classdef CarouselGreedy < handle
     %       'Data'                    arbitrary user data (accessible via obj.Data)
     %       'RandomTieBreak' (bool)   random choice among top‑scoring candidates
     %       'Seed'  (integer)         RNG seed
-    %       'UseParallel' (bool)      evaluate scores inside PARFOR when feasible
-    %
+    
     %   Public API (mirrors the Python version)
     %       greedyMinimize / greedyMaximize – only greedy construction
     %       minimize        / maximize      – full Carousel optimisation
@@ -36,7 +35,6 @@ classdef CarouselGreedy < handle
         CandidateElements                               % cell|array of candidates
         RandomTieBreak logical = true
         Seed   (1,1) double {mustBeInteger} = 42
-        UseParallel logical = false
     end
 
     %% Public‑read / private‑write properties
@@ -77,7 +75,6 @@ classdef CarouselGreedy < handle
             addParameter(p,'Data',[]);
             addParameter(p,'RandomTieBreak',true,@(x)islogical(x)&&isscalar(x));
             addParameter(p,'Seed',42,@(x)validateattributes(x,{'numeric'},{'scalar','integer','nonnegative'}));
-            addParameter(p,'UseParallel',false,@(x)islogical(x)&&isscalar(x));
             parse(p,varargin{:});
 
             % Store parameters
@@ -86,7 +83,6 @@ classdef CarouselGreedy < handle
             obj.Data           = p.Results.Data;
             obj.RandomTieBreak = p.Results.RandomTieBreak;
             obj.Seed           = p.Results.Seed;
-            obj.UseParallel    = p.Results.UseParallel;
 
             obj.TestFeasibility = testFeasibility;
             obj.GreedyFunction  = greedyFunction;
